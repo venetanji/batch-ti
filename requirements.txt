@@ -1,0 +1,11 @@
+accelerate
+diffusers==0.7.2
+fastcore
+huggingface_hub
+numpy
+Pillow
+PyYAML
+torch
+torchvision
+tqdm
+transformers

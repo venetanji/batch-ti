@@ -1,0 +1,89 @@
+# The path containing the images for each batch
+# The datasets_path should contain one folder named as the batch
+# Inside the batch folder create folders for each template you want to use 
+# Templates are defined below in this configuration file
+# Inside each template folder put each concept in a folder that will name the new token
+# CONCEPT NAMES SHOULD BE UNIQUE!
+datasets_path: datasets
+
+# Output path for concepts
+base_outpath: concepts
+
+# pretrained model to use
+model: runwayml/stable-diffusion-v1-5
+
+# deftault initialization value for concept tokens
+# you can specify the init for each concept in the batch in [batch_folder]/inits.yaml
+default_init: person
+default_description: painting
+save_every: 100
+max_steps: 3000
+lr: 3e-04
+
+batches:
+  -
+    name: my-batch
+    templates:
+      - subject
+  - 
+    name: another-batch
+    templates:
+      - style
+
+templates:
+  subject:
+    - a photo of a {}
+    - a rendering of a {}
+    - a cropped photo of the {}
+    - the photo of a {}
+    - a photo of a clean {}
+    - a photo of a dirty {}
+    - a dark photo of the {}
+    - a photo of my {}
+    - a photo of the cool {}
+    - a close-up photo of a {}
+    - a bright photo of the {}
+    - a cropped photo of a {}
+    - a photo of the {}
+    - a good photo of the {}
+    - a photo of one {}
+    - a close-up photo of the {}
+    - a rendition of the {}
+    - a photo of the clean {}
+    - a rendition of a {}
+    - a photo of a nice {}
+    - a good photo of a {}
+    - a photo of the nice {}
+    - a photo of the small {}
+    - a photo of the weird {}
+    - a photo of the large {}
+    - a photo of a cool {}
+    - a photo of a small {}
+  
+  style:
+    - a {description} {token}
+    - a sketch of {description} {token}
+    - an illustration of {description} {token}
+    - a photo of a nice {description}, in the style of {token}
+    - an illustration of a {description} as {token}
+    - a digital vector illustration of a {description} by {token}
+    - an illustration of a {description} designed by {token}
+    - a sketch of {description}, design by {description}
+    - a sketch {description}, concept art by {token}
+    - an illustration of a large {description}, by {token}
+    - a sketch of a {description}, {token} drawing sytle 
+
+  photography-style:
+    - a photograph of {} photography by {}
+    - a rendering of {} photography by {}
+    - a picture of {} photography by {}
+    - a photo of {} photography by {}
+    - a photographic composition of {} photography by {}
+    - a photograph of {} photography style by {}
+    - a good photograph of {} photography by {}
+    - a bad photograph of {} photography by {}
+    - a cropped photograph of {} photography by {}
+    - a close-up photograph of {} photography by {}
+    - a small photograph of {} photography by {}
+    - a weird photograph of {} photography by {}
+    - a large photograph of {} photography by {} 

@@ -1,0 +1,1 @@
+Image descriptions will be loaded from a .txt file with the same name as the image in this folder.

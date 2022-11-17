@@ -1,0 +1,2 @@
+# concepts without an init here will use the default init token
+my-cat: cat 
